@@ -2,7 +2,7 @@ class CreateParks < ActiveRecord::Migration[6.0]
   def change
     create_table :parks do |t|
       t.string :geolocalization
-      t.integer :types-of-vehicles
+      t.integer :types_of_vehicles
 
       t.timestamps
     end
