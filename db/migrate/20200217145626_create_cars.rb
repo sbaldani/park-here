@@ -7,7 +7,7 @@ class CreateCars < ActiveRecord::Migration[6.0]
       t.integer :year
       t.string :color
       t.string :brand
-      t.reference :user
+      t.references :user
 
       t.timestamps
     end

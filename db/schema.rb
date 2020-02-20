@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_143455) do
+ActiveRecord::Schema.define(version: 2020_02_17_161728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_143455) do
 
   create_table "parks", force: :cascade do |t|
     t.string "geolocalization"
-    t.string "type_of_vehicle"
+    t.integer "types_of_vehicles"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
