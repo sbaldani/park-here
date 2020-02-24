@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_161728) do
+ActiveRecord::Schema.define(version: 2020_02_21_170302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(version: 2020_02_17_161728) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "rents", force: :cascade do |t|
+    t.bigint "owner_id"
+    t.bigint "client_id"
+    t.bigint "car_id"
+    t.bigint "park_id"
+    t.float "price"
+    t.datetime "date_from"
+    t.datetime "date_to"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_id"], name: "index_rents_on_car_id"
+    t.index ["client_id"], name: "index_rents_on_client_id"
+    t.index ["owner_id"], name: "index_rents_on_owner_id"
+    t.index ["park_id"], name: "index_rents_on_park_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -46,4 +62,6 @@ ActiveRecord::Schema.define(version: 2020_02_17_161728) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "rents", "users", column: "client_id"
+  add_foreign_key "rents", "users", column: "owner_id"
 end
