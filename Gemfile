@@ -45,6 +45,9 @@ group :development, :test do
 
   # Behaviour Driven Development for Ruby. Making TDD Productive and Fun.
   gem 'rspec-rails', '3.9.0'
+
+  # RubyCritic is a gem that wraps around static analysis gems such as Reek, Flay and Flog to provide a quality report of your Ruby code.
+  gem "rubycritic", require: false
 end
 
 group :development do
