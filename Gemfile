@@ -47,7 +47,10 @@ group :development, :test do
   gem 'rspec-rails', '3.9.0'
 
   # RubyCritic is a gem that wraps around static analysis gems such as Reek, Flay and Flog to provide a quality report of your Ruby code.
-  gem "rubycritic", require: false
+  gem "rubycritic"
+
+  # A static analysis security vulnerability scanner for Ruby on Rails applications.
+  gem 'brakeman'
 end
 
 group :development do
