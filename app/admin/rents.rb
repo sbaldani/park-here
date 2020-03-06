@@ -1,5 +1,5 @@
 ActiveAdmin.register Rent do
-
+  permit_params :owner_id, :client_id, :car_id, :park_id, :price, :date_from, :date_to
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
