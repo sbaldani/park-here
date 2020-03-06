@@ -7,66 +7,25 @@
 
     <%= stylesheet_link_tag 'user', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
 
   <body>
-    <!-- HEADER -->
+    <!-- Header -->
+    <%= render partial: 'layouts/user/header' %>
 
-    <header>
-      <h2>Park Here</h2>
-    </header>
-
-    <!-- SIDE-BAR -->
+    <!-- MISSING FLASH MESSAGES PARTIAL HERE -->
 
     <section class="content">
-      <aside class="menu">
-        <p class="menu-label">
-          General
-        </p>
-        <ul class="menu-list">
-          <li><a>Dashboard</a></li>
-          <li><a>Customers</a></li>
-        </ul>
-        <p class="menu-label">
-          Administration
-        </p>
-        <ul class="menu-list">
-          <li><a>Team Settings</a></li>
-          <li>
-            <a>Manage Your Team</a>
-            <ul>
-              <li><a>Members</a></li>
-              <li><a>Plugins</a></li>
-              <li><a>Add a member</a></li>
-            </ul>
-          </li>
-          <li><a>Invitations</a></li>
-          <li><a>Cloud Storage Environment Settings</a></li>
-          <li><a>Authentication</a></li>
-        </ul>
-        <p class="menu-label">
-          Transactions
-        </p>
-        <ul class="menu-list">
-          <li><a>Payments</a></li>
-          <li><a>Transfers</a></li>
-          <li><a>Balance</a></li>
-        </ul>
-      </aside>
+      <!-- Sidebar -->
+      <%= render partial: 'layouts/user/sidebar' %>
 
-    <!-- CONTENT -->
-
+      <!-- Content -->
       <article class="is-medium">
         <%= yield %>
       </article>
     </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>Footer</p>
-    </footer>
   </body>
+
+  <!-- Footer -->
+  <%= render partial: 'layouts/user/footer' %>
 </html>
