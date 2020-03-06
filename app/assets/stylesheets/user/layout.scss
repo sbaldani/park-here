@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+.content {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  background: #f1f1f1;
+  padding: 10px;
+  padding-bottom: 0;
+  flex: auto;
+}
+
+footer {
+  background: #777;
+  padding: 10px;
+  padding-top: 0;
+  text-align: center;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+@media (max-width: 400px) {
+  .content {
+    flex-wrap: wrap;
+  }
+
+  article {
+    flex: auto;
+  }
+}
