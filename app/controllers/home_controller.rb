@@ -1,4 +1,4 @@
-class HomeController < AppController
+class HomeController < ApplicationController
 	layout 'home'
 
   def index
