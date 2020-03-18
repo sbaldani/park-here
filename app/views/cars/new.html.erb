@@ -1,17 +1,17 @@
 <h1>New Cars</h1>
 
-<form action="cars/">
-	<label for="registration_plate">Registration plate: </label><br>
-	<input type="text" name="registration_plate"><br><br>
-	<label for="type_of_car">Type of car: </label><br>
-	<input type="text" name="type_of_car"><br><br>
-	<label for="model">Model: </label><br>
-	<input type="text" name="model"><br><br>
-	<label for="year">Year: </label><br>
-	<input type="date" name="year"><br><br>
-	<label for="color">Car color: </label><br>
-	<input type="color" name="color"><br><br>
-	<label for="brand">Brand: </label><br>
-	<input type="text" name="brand"><br><br>
-	<input type="submit">
-</form>
+<%= form_for @car do |form| %>
+  <%= form.label :registration_plate %>
+  <%= form.text_field :registration_plate %>
+  <%= form.label :type_of_car %>
+  <%= form.text_field :type_of_car %>
+  <%= form.label :model %>
+  <%= form.text_field :model %>
+  <%= form.label :year %>
+  <%= form.text_field :year, type: 'number', step: 1, min: 1900, max: Date.current.year %>
+  <%= form.label :color %>
+  <%= form.text_field :color, type: 'color' %>
+  <%= form.label :brand %>
+  <%= form.text_field :brand %>
+  <%= form.submit "Create" %>
+<% end %>
