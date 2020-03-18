@@ -3,6 +3,17 @@ class CarsController < AppController
 	end
 
 	def create
+		def cars_params
+			params.require(:car).permit(:registration_plate, :type_of_car, :model, :year, :color, :brand)
+		end
+
+		@car = Car.build cars_params
+
+		if @car.save!
+			redirect to :index
+		else 
+			redirect to :create
+		end
 	end
 
 	def new
