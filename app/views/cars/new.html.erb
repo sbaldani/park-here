@@ -1,1 +1,17 @@
 <h1>New Cars</h1>
+
+<%= form_for @car do |form| %>
+  <%= form.label :registration_plate %> <br>
+  <%= form.text_field :registration_plate, class: "input is-rounded is-primary" %>
+  <%= form.label :type_of_car %> <br>
+  <%= form.text_field :type_of_car, class: "input is-rounded is-primary" %>
+  <%= form.label :model %> <br>
+  <%= form.text_field :model, class: "input is-rounded is-primary" %>
+  <%= form.label :year %> <br>
+  <%= form.text_field :year, type: 'number', step: 1, min: 1900, max: Date.current.year, class: "input is-rounded is-primary" %>
+  <%= form.label :color %> <br>
+  <%= form.text_field :color, type: 'color', class: "input is-rounded" %>
+  <%= form.label :brand %> <br>
+  <%= form.text_field :brand, class: "input is-rounded is-primary" %> <br> <br>
+  <%= form.submit "Submit", class: "button is-link" %>
+<% end %>

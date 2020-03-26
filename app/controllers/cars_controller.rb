@@ -1,22 +1,36 @@
 class CarsController < AppController
-	def index
-	end
+  def index
+  end
 
-	def create
-	end
+  def create
+    @car = Car.new cars_params
 
-	def new
-	end
+    if @car.save!
+      render :index
+    else
+      render :create
+    end
+  end
 
-	def edit
-	end
+  def new
+    @car = Car.new
+  end
 
-	def show
-	end
+  def edit
+  end
 
-	def update
-	end
+  def show
+  end
 
-	def destroy
-	end
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+
+  def cars_params
+    params.require(:car).permit(:registration_plate, :type_of_car, :model, :year, :color, :brand)
+  end
 end
