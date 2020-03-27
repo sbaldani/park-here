@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :costumers
   resources :cars
   resources :parks
+  resources :rents
   root 'home#index'
 end
