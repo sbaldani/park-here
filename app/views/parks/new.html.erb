@@ -1,1 +1,9 @@
 <h1>Parks New</h1>
+
+<%= form_for @park do |form| %>
+  <%= form.label :geolocalization %> <br>
+  <%= form.text_field :geolocalization, class: "input is-rounded is-primary" %>
+  <%= form.label :types_of_vehicles %> <br>
+  <%= form.text_field :types_of_vehicles, type: 'number', class: "input is-rounded is-primary" %> <br> <br>
+  <%= form.submit "Submit", class: "button is-link" %>
+<% end %>
