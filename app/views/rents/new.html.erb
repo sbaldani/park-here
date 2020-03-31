@@ -1,0 +1,17 @@
+<h1>New Rent</h1>
+
+<%= form_for @rent do |form| %>
+  <%= form.label :owner_id %> <br>
+  <%= form.text_field :owner_id, type: 'number', class: "input is-rounded is-primary" %>
+  <%= form.label :client_id %> <br>
+  <%= form.text_field :client_id, type: 'number', class: "input is-rounded is-primary" %>
+  <%= form.label :car_id %> <br>
+  <%= form.text_field :car_id, type: 'number', class: "input is-rounded is-primary" %>
+  <%= form.label :park_id %> <br>
+  <%= form.text_field :park_id, type: 'number', class: "input is-rounded is-primary" %>
+  <%= form.label :date_from %> <br>
+  <%= form.text_field :date_from, type: 'date', class: "input is-rounded is-primary" %>
+  <%= form.label :date_to %> <br>
+  <%= form.text_field :date_to, type: 'date', class: "input is-rounded is-primary" %>
+  <%= form.submit "Submit", class: "button is-link" %>
+<% end %>
