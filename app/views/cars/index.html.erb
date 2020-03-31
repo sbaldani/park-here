@@ -1,1 +1,28 @@
 <h1>Cars Index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Registration Plate</th>
+      <th>Type of car</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th>Brand</th>
+      <th>User Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.registration_plate %></td>
+      <td><%= car.type_of_car %></td>
+      <td><%= car.model %></td>
+      <td><%= car.year %></td>
+      <td><%= car.color %></td>
+      <td><%= car.brand %></td>
+      <td><%= car.user_id %></td>
+    </tr>
+  <% end %>
+</table>

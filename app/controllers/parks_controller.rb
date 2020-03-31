@@ -1,5 +1,6 @@
 class ParksController < AppController
   def index
+    @parks = Park.all
   end
 
   def create

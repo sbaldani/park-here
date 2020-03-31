@@ -1,5 +1,6 @@
 class RentsController < AppController
   def index
+    @rents = Rent.all
   end
 
   def create

@@ -1,1 +1,28 @@
 <h1>Index Rent</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner Ide</th>
+      <th>Client Id</th>
+      <th>Car Id</th>
+      <th>Park Id</th>
+      <th>Price</th>
+      <th>Date from</th>
+      <th>Date to</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <% @rents.each do |rent| %>
+    <tr>
+      <td><%= rent.owner_id %></td>
+      <td><%= rent.client_id %></td>
+      <td><%= rent.car_id %></td>
+      <td><%= rent.park_id %></td>
+      <td><%= rent.price %></td>
+      <td><%= rent.date_from %></td>
+      <td><%= rent.date_to %></td>
+    </tr>
+  <% end %>
+</table>
