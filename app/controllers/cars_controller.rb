@@ -1,5 +1,6 @@
 class CarsController < AppController
   def index
+    @cars = Car.all
   end
 
   def create

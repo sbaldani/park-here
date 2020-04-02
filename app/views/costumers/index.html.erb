@@ -1,1 +1,26 @@
 <h1>Index Costumers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Id Number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.surname %></td>
+      <td><%= user.address %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.email %></td>
+      <td><%= user.id_number %></td>
+    </tr>
+  <% end %>
+</table>
