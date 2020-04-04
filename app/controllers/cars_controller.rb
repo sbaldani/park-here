@@ -7,7 +7,7 @@ class CarsController < AppController
     @car = Car.new cars_params
 
     if @car.save!
-      render :index
+      redirect_to cars_path
     else
       render :create
     end
