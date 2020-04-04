@@ -1,8 +1,8 @@
-class CostumersController < AppController
-  def index
+class CustomersController < AppController
+	def index
     @users = User.all
-  end
-
+	end
+  
   def create
     @user = User.new users_params
 
