@@ -7,7 +7,7 @@ class ParksController < AppController
     @park = Park.new parks_params
 
     if @park.save!
-      render :index
+      redirect_to parks_path
     else
       render :create
     end

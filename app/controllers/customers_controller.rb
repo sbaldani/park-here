@@ -7,7 +7,7 @@ class CustomersController < AppController
     @user = User.new users_params
 
     if @user.save
-      render :index
+      redirect_to customers_path
     else
       render :create
     end
