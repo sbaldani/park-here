@@ -7,7 +7,7 @@ class RentsController < AppController
     @rent = Rent.new rents_params
 
     if @rent.save!
-      render :index
+      redirect_to rents_path
     else
       render :create
     end

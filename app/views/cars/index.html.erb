@@ -1,4 +1,4 @@
-<h1>Cars Index</sh1>
+<h1>Cars Index</h1>
 <%= link_to('New car', new_car_path, class: 'button is-primary is-rounded is-normal') %>
 
 <table>
@@ -15,15 +15,17 @@
     </tr>
   </thead>
 
-  <% @cars.each do |car| %>
-    <tr>
-      <td><%= car.registration_plate %></td>
-      <td><%= car.type_of_car %></td>
-      <td><%= car.model %></td>
-      <td><%= car.year %></td>
-      <td><%= car.color %></td>
-      <td><%= car.brand %></td>
-      <td><%= car.user_id %></td>
-    </tr>
-  <% end %>
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.registration_plate %></td>
+        <td><%= car.type_of_car %></td>
+        <td><%= car.model %></td>
+        <td><%= car.year %></td>
+        <td><%= car.color %></td>
+        <td><%= car.brand %></td>
+        <td><%= car.user_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

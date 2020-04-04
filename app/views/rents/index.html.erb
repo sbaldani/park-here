@@ -15,15 +15,17 @@
     </tr>
   </thead>
 
-  <% @rents.each do |rent| %>
-    <tr>
-      <td><%= rent.owner_id %></td>
-      <td><%= rent.client_id %></td>
-      <td><%= rent.car_id %></td>
-      <td><%= rent.park_id %></td>
-      <td><%= rent.price %></td>
-      <td><%= rent.date_from %></td>
-      <td><%= rent.date_to %></td>
-    </tr>
-  <% end %>
+  <tbody>
+    <% @rents.each do |rent| %>
+      <tr>
+        <td><%= rent.owner_id %></td>
+        <td><%= rent.client_id %></td>
+        <td><%= rent.car_id %></td>
+        <td><%= rent.park_id %></td>
+        <td><%= rent.price %></td>
+        <td><%= rent.date_from %></td>
+        <td><%= rent.date_to %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
