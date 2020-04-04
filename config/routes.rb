@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'home/index'
   get 'dashboard/', to: 'dashboard#index'
-  resources :costumers
+  resources :customers
   resources :cars
   resources :parks
   resources :rents
