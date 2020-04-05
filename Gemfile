@@ -51,6 +51,9 @@ group :development, :test do
 
   # A static analysis security vulnerability scanner for Ruby on Rails applications.
   gem 'brakeman'
+
+  # ActiveRecord plugin allowing you to hide and restore records without actually deleting them.
+  gem 'acts_as_paranoid'
 end
 
 group :development do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_115640) do
+ActiveRecord::Schema.define(version: 2020_04_04_232649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_115640) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_admin_users_on_deleted_at"
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
@@ -51,6 +53,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_115640) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_cars_on_deleted_at"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
@@ -59,6 +63,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_115640) do
     t.integer "types_of_vehicles"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_parks_on_deleted_at"
   end
 
   create_table "rents", force: :cascade do |t|
@@ -71,8 +77,10 @@ ActiveRecord::Schema.define(version: 2020_03_03_115640) do
     t.datetime "date_to"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
     t.index ["car_id"], name: "index_rents_on_car_id"
     t.index ["client_id"], name: "index_rents_on_client_id"
+    t.index ["deleted_at"], name: "index_rents_on_deleted_at"
     t.index ["owner_id"], name: "index_rents_on_owner_id"
     t.index ["park_id"], name: "index_rents_on_park_id"
   end
@@ -102,7 +110,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_115640) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.datetime "deleted_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
