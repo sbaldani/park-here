@@ -1,0 +1,36 @@
+<%= render "users/shared/error_messages", resource: resource %>
+
+<%= form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'box' } do |f| %>
+  <h1 class="title has-text-black">Sign in</h1>
+  <div class="field">
+    <%= f.label :email, class: 'label' %>
+    <div class="control has-icons-left">
+      <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'e.g. bobsmith@gmail.com', class: 'input', required: true %>
+      <span class="icon is-small is-left">
+        <i class="fa fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: 'label' %>
+    <div class="control has-icons-left">
+      <%= f.password_field :password, autocomplete: 'current-password', class: 'input', placeholder: '*******', required: true %>
+      <span class="icon is-small is-left">
+        <i class="fa fa-lock"></i>
+      </span>
+    </div>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.submit 'Login', class: 'button is-success' %>
+  </div>
+  <%= render "users/shared/links" %>
+<% end %>
